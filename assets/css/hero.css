@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url(../img/hero-bg-desktop.webp);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.hero-conteudo {
+    display: flex;
+    flex-direction: column;
+    max-width: 790px;
+    align-items: flex-start;
+    gap: 1.275rem;
+}
+
+.hero-textos {
+    display: flex;
+    flex-direction: column;
+    gap: .825rem;
+}
+
+.titulo {
+    font-size: 3rem;
+    letter-spacing: -2px;
+}
+
+.titulo span {
+    color: var(--cor-secundaria);
+}

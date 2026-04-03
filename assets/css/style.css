@@ -1,0 +1,116 @@
+/* =========================================
+   Variaveis globais
+   ========================================= */
+
+:root {
+    --cor-bg: #ffffff;
+
+    --cor-primaria: #010647;
+    --cor-secundaria: #F58634;
+    --cor-texto: rgb(1, 6, 71, 0.8);
+    
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   Resetando CSS & Estilos Base
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-bg);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1720px;
+    padding: 0 6rem;
+}
+
+/* Tipografia */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--cor-primaria);
+}
+
+h1 {
+    font-size: 4.175rem;
+}
+
+p {
+    color: var(--cor-texto);
+    font-size: 1.075rem;
+}
+
+/* =========================================
+   Componentes Globais
+   ========================================= */
+
+/* Tags */
+
+.tag-padrao {
+    font-size: .875rem;
+    font-weight: 400;
+    color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+
+    span {
+        display: inline-block;
+        width: 85%;
+        height: 1.5px;
+        background-color: var(--cor-secundaria);
+        box-shadow: 0 147px 41px 0 rgba(245, 134, 52, 0.02),
+                    0 94px 38px 0 rgba(245, 134, 52, 0.15),
+                    0 53px 32px 0 rgba(245, 134, 52, 0.5),
+                    0 24px 24px 0 rgba(245, 134, 52, 0.85),
+                    0 6px 13px 0 rgba(245, 134, 52, 0.98);
+    }
+}
+
+/* Botões */
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.625rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 400;
+    border: none;
+
+    img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.btn-primario {
+    background: var(--cor-primaria);
+    color: var(--cor-bg);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -4px rgba(79, 70, 229, 0.4);
+}
