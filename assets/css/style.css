@@ -3,7 +3,7 @@
    ========================================= */
 
 :root {
-    --cor-bg: #ffffff;
+    --cor-bg: #fff;
 
     --cor-primaria: #010647;
     --cor-secundaria: #F58634;
@@ -32,6 +32,10 @@ body {
     color: var(--cor-texto);
     line-height: 1.6;
     overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -56,6 +60,12 @@ p {
     color: var(--cor-texto);
     font-size: 1.075rem;
 }
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
 
 /* =========================================
    Componentes Globais
@@ -90,8 +100,7 @@ p {
 .btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 0.625rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 400;
@@ -102,15 +111,116 @@ p {
         height: 14px;
     }
 }
-
+/*
 .btn-primario {
     background: var(--cor-primaria);
     color: var(--cor-bg);
     border: 1px solid transparent;
 }
 
-.btn-primary:hover {
+.btn-primario:hover {
     background: #4338ca;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px -4px rgba(79, 70, 229, 0.4);
+}
+*/
+
+/* Substituímos "selector" por ".borda-animada-container" */
+.borda-animada-container {
+    overflow: hidden;
+    border-radius: 50px;
+    padding: 0;
+    position: relative; /* Adicionado para conter o brilho dentro do botão */
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+
+.borda-animada-container .elementor-button * {
+    position: relative;
+    z-index: 9;
+    color: var(--cor-bg); /* Cor do texto adicionada para visualização */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.borda-animada-container .elementor-button {
+    transition: 0.5s;
+    background: transparent !important;
+    position: relative;
+    z-index: 3;
+    border: none; /* Removendo borda padrão do HTML */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cor da borda estática ao fundo */
+.borda-animada-container .elementor-button::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #07070720; /* Altere a cor aqui */
+    z-index: 1;
+    transition: opacity 0.3s linear;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Cor de fundo (Preenchimento do botão) */
+.borda-animada-container .elementor-button::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--cor-primaria); /* Altere a cor aqui */
+    z-index: 3;
+    opacity: 1;
+    width: calc(100% - 6px); /* Controle a espessura da borda aqui. Mudei para 4px para destacar mais */
+    height: calc(100% - 6px);
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+/* Cor e formato do brilho que gira */
+.borda-animada-container::before {
+    position: absolute;
+    content: "";
+    top: -200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--cor-secundaria); /* Cor do brilho - altere a cor aqui */
+    z-index: 2;
+    transition: opacity 0.2s linear;
+    opacity: 1;
+    width: 50px;
+    height: 500%;
+    filter: blur(5px);
+    border-radius: 50px;
+    animation: rodar 5s infinite linear;
+    transform-origin: center bottom;
+}
+
+/* Animação do brilho */
+@keyframes rodar {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.borda-animada-container:hover {
+    transform: translateY(-8px) scale(1.05);
+
+    .elementor-button::before {
+        background-color: var(--cor-secundaria);
+    }
 }

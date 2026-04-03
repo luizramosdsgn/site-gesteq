@@ -6,6 +6,8 @@
     <title>Gesteq | Soluções em Gestão</title>
     <meta name="description" content="Gesteq - Transformando a gestão da sua empresa.">
 
+    <link rel="shortcut icon" href="assets/icons/icone-vetor.svg" type="image/svg+xml">
+
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +15,13 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/hero.css">
 </head>
 <body>
 
+    <div id="header-container"></div>
+    
     <main>
         <section class="hero" id="inicio">
             <div class="container hero-conteudo">
@@ -28,10 +33,15 @@
                         Através de <strong>metodologias ágeis e desenvolvimento humano</strong>, elevamos o patamar de organizações com foco em produtividade, gestão e excelência operacional.
                     </p>
                 </div>
-                <a href="#" class="btn btn-primario">Agendar uma Conversa Estratégica <img src="assets/icons/flecha-cta.svg" alt="flecha cta"></a>
+                <div class="borda-animada-container">
+                    <a href="#" class="elementor-button btn">
+                        <span>Agendar uma Conversa Estratégica <img src="assets/icons/flecha-cta.svg" alt="flecha cta"></span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
+    <script src="assets/js/components.js"></script>
 </body>
 </html>

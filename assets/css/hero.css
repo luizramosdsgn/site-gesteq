@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
 .hero {
-    min-height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     padding-top: 100px;
     position: relative;
     overflow: hidden;
+    width: 100vw;
 
     background-image: url(../img/hero-bg-desktop.webp);
     background-size: cover;
