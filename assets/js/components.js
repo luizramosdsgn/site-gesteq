@@ -63,4 +63,50 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // =========================================
+    // Lógica - Cards de Identidade Corporativa
+    // =========================================
+    const cardsIdentidade = document.querySelectorAll('.card-identidade');
+    if (cardsIdentidade.length > 0) {
+        let currentIndex = 0;
+        let intervalId;
+
+        const activateCard = (index) => {
+            cardsIdentidade.forEach(card => card.classList.remove('ativo'));
+            cardsIdentidade[index].classList.add('ativo');
+        };
+
+        const startAutoPlay = () => {
+            intervalId = setInterval(() => {
+                currentIndex = (currentIndex + 1) % cardsIdentidade.length;
+                activateCard(currentIndex);
+            }, 3000);
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(intervalId);
+        };
+
+        // Inicia o autoplay
+        startAutoPlay();
+
+        // Adiciona os eventos de hover
+        cardsIdentidade.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                stopAutoPlay();
+                activateCard(index);
+                currentIndex = index;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                startAutoPlay();
+            });
+            
+            // Impede a navegação padrão ao clicar (já que o href é "#")
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+        });
+    }
 });
