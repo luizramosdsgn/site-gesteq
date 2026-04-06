@@ -11,7 +11,7 @@ const headerHTML = `
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#">Soluções</a></li>
                     <li><a href="#">Clientes</a></li>
                 </ul>
@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerContainer) {
         headerContainer.innerHTML = headerHTML;
         
+        // Efeito Scroll no Header (Desktop)
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                headerContainer.classList.add('scrolled');
+            } else {
+                headerContainer.classList.remove('scrolled');
+            }
+        });
+
         // CORREÇÃO E IMPLEMENTAÇÃO: Adicionando ação ao botão do menu mobile
         const btnMobile = document.getElementById('btn-mobile');
         const navMenu = document.getElementById('nav-menu');

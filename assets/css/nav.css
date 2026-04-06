@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     z-index: 1000;
+    transition: top 0.3s ease;
 }
 
 .cabecalho {
@@ -33,6 +34,7 @@
     align-items: center;
     padding: .5rem !important;
     width: 100%;
+    margin: 0 auto;
 
     a.logo-link {
         padding: 0 !important;
@@ -172,6 +174,19 @@
 .btn-mobile.ativo .hamburguer::after {
     top: 0;
     transform: rotate(-45deg);
+}
+
+/* Efeito Scroll no Header (Desktop) */
+@media (min-width: 1025px) {
+    #header-container.scrolled {
+        top: 0;
+    }
+
+    #header-container.scrolled .cabecalho {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+    }
 }
 
 /* Responsividade Menu Mobile */

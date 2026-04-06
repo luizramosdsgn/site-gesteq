@@ -48,7 +48,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--cor-primaria);
 }
 
@@ -80,7 +80,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-      
+    position: relative;
 
     span {
         display: inline-block;
