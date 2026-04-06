@@ -92,6 +92,37 @@ a {
                     0 53px 32px 0 rgba(245, 134, 52, 0.5),
                     0 24px 24px 0 rgba(245, 134, 52, 0.85),
                     0 6px 13px 0 rgba(245, 134, 52, 0.98);
+
+        /* animation: linhaMagica 2.5s ease-in-out infinite; */
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.tag-padrao:hover span {
+    animation: linhaMagica 1.5s ease-in-out forwards;
+}
+
+@keyframes linhaMagica {
+    /* 1. Início: Linha completa */
+    0%, 10% {
+        transform-origin: right; /* Âncora na direita */
+        transform: scaleX(1);
+    }
+    /* 2. Encolhe da esquerda para a direita */
+    45%, 50% {
+        transform-origin: right;
+        transform: scaleX(0); /* Fica com largura 0 */
+    }
+    /* 3. Troca a âncora invisivelmente enquanto a linha está sumida */
+    50.1% {
+        transform-origin: left; /* Muda a âncora para a esquerda */
+        transform: scaleX(0);
+    }
+    /* 4. Estica da esquerda para a direita */
+    90%, 100% {
+        transform-origin: left;
+        transform: scaleX(1); /* Volta para a largura normal */
     }
 }
 
@@ -105,122 +136,44 @@ a {
     text-decoration: none;
     font-weight: 400;
     border: none;
+    gap: 12px;
+    transition: all 0.3s ease-in-out;
 
     img {
         width: 14px;
         height: 14px;
+        transition: all 0.3s ease-in-out;
     }
 }
-/*
+
 .btn-primario {
     background: var(--cor-primaria);
     color: var(--cor-bg);
     border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.8s;
+}
+
+.btn-primario:hover::before {
+    left: 100%;
 }
 
 .btn-primario:hover {
-    background: #4338ca;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: 0 8px 15px -4px rgba(79, 70, 229, 0.4);
-}
-*/
 
-/* Substituímos "selector" por ".borda-animada-container" */
-.borda-animada-container {
-    overflow: hidden;
-    border-radius: 50px;
-    padding: 0;
-    position: relative; /* Adicionado para conter o brilho dentro do botão */
-    display: inline-block;
-    transition: all .3s ease-in-out;
-}
-
-.borda-animada-container .elementor-button * {
-    position: relative;
-    z-index: 9;
-    color: var(--cor-bg); /* Cor do texto adicionada para visualização */
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.borda-animada-container .elementor-button {
-    transition: 0.5s;
-    background: transparent !important;
-    position: relative;
-    z-index: 3;
-    border: none; /* Removendo borda padrão do HTML */
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Cor da borda estática ao fundo */
-.borda-animada-container .elementor-button::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #07070720; /* Altere a cor aqui */
-    z-index: 1;
-    transition: opacity 0.3s linear;
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-/* Cor de fundo (Preenchimento do botão) */
-.borda-animada-container .elementor-button::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--cor-primaria); /* Altere a cor aqui */
-    z-index: 3;
-    opacity: 1;
-    width: calc(100% - 6px); /* Controle a espessura da borda aqui. Mudei para 4px para destacar mais */
-    height: calc(100% - 6px);
-    border-radius: 50px;
-    transition: 0.5s;
-}
-
-/* Cor e formato do brilho que gira */
-.borda-animada-container::before {
-    position: absolute;
-    content: "";
-    top: -200%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--cor-secundaria); /* Cor do brilho - altere a cor aqui */
-    z-index: 2;
-    transition: opacity 0.2s linear;
-    opacity: 1;
-    width: 50px;
-    height: 500%;
-    filter: blur(5px);
-    border-radius: 50px;
-    animation: rodar 5s infinite linear;
-    transform-origin: center bottom;
-}
-
-/* Animação do brilho */
-@keyframes rodar {
-    0% {
-        transform: translate(-50%, -50%) rotate(0);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-.borda-animada-container:hover {
-    transform: translateY(-8px) scale(1.05);
-
-    .elementor-button::before {
-        background-color: var(--cor-secundaria);
+    img {
+        transform: rotate(45deg);
     }
 }
