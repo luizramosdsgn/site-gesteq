@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+/* =========================================
+   Arquivo Central de Responsividade
+   ========================================= */
+
+/* ----------- AJUSTES GLOBAIS ----------- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================
+   Seção: HERO
+   ========================================= */
+
+/* ----------- TABLET (Até 1024px) ----------- */
+@media (max-width: 1024px) {
+    .hero {
+        background-image: url(../img/hero-bg-mobile.webp);
+        background-position: top center;
+        height: fit-content;
+        padding-top: 800px; /* Mais espaço por causa do menu mobile */
+        padding-bottom: 60px;
+    }
+
+    .hero-conteudo {
+        max-width: 100%;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .hero-textos {
+        align-items: center;
+    }
+}
+
+/* ----------- MOBILE (Até 768px) ----------- */
+@media (max-width: 768px) {
+    .hero {
+        width: 100%;
+        background-image: url(../img/hero-bg-mobile.webp);
+        background-position: top center;
+        height: fit-content;
+        min-height: 100dvh;
+        padding-top: 500px; /* Mais espaço por causa do menu mobile */
+        padding-bottom: 60px;
+    }
+
+    .hero-conteudo {
+        gap: 2rem;
+    }
+
+    .hero .titulo {
+        font-size: 2.25rem;
+        letter-spacing: -1px;
+    }
+
+    .hero .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================
+   Seção: SOBRE NÓS
+   ========================================= */
+
+/* ----------- TABLET (Até 1024px) ----------- */
+@media (max-width: 1024px) {
+    .sobre {
+        background-image: url(../img/fundo-sobre-mobile.svg);
+        background-position: center center;
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
+        margin-top: 0;
+
+        .sobre-conteudo {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+
+        .sobre-container {
+        width: 100%;
+        align-items: center;
+        }
+
+        }
+        
+        .sobre-conteudo img {
+        width: 60%;
+        }
+
+        .sobre-textos .subtitulo p {
+        text-indent: 0; /* Remove aquele recuo de parágrafo no modo centralizado */
+        }
+    }
+}
+
+/* ----------- MOBILE (Até 768px) ----------- */
+@media (max-width: 768px) {
+    .sobre {
+        background-image: url(../img/fundo-sobre-mobile.svg);
+        background-position: center center;
+        padding: 3rem 0;
+    }
+
+    .sobre .sobre-conteudo img {
+        width: 90%;
+    }
+
+    .sobre .sobre-textos .titulo-sobre {
+        font-size: 2rem;
+        letter-spacing: -1px;
+    }
+}
+
+
+/* =========================================
+   Seção: IDENTIDADE CORPORATIVA
+   ========================================= */
+
+/* ----------- TABLET (Até 1024px) ----------- */
+@media (max-width: 1360px) {
+    .identidade {
+        padding: 6rem 2rem;
+    }
+
+    .cards-identidade {
+        flex-wrap: wrap;
+        align-items: center; /* Centraliza os cartões na tela */
+        gap: 3rem;
+    }
+
+    .card-identidade {
+        width: 100%;
+        max-width: 500px; /* Limita a largura para não esticar de ponta a ponta e perder a proporção quadrada ideal */
+        height: auto;     /* Deixa a altura livre para expandir com o conteúdo */
+        min-height: 380px; 
+    }
+
+    .card-identidade .icone-card {
+        transform: scale(0.8);
+        transform-origin: left center; /* Para encolher sem afastar o ícone da margem esquerda */
+    }
+}
+
+@media (max-width: 1024px) {
+    .cards-identidade {
+        flex-direction: column;
+    }
+}
+
+/* ----------- MOBILE (Até 768px) ----------- */
+@media (max-width: 768px) {
+
+    .cards-identidade {
+        flex-direction: column;
+    }
+
+    .identidade {
+        padding: 4rem 1.25rem;
+    }
+
+    .card-identidade {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    .card-identidade h3 {
+        font-size: 1.6rem;
+    }
+
+    .card-identidade p, 
+    .card-identidade ul {
+        font-size: 1.15rem;
+    }
+
+    .card-identidade .icone-card {
+        transform: scale(0.7);
+    }
+}

@@ -181,19 +181,4 @@
 }
 
 
-/* Responsividade */
-@media (max-width: 1024px) {
-    .cards-identidade {
-        flex-direction: column;
-        gap: 3rem;
-        align-items: stretch;
-    }
-    
-    .card-identidade {
-        padding: 0 2rem 2rem 2rem;
-    }
 
-    .icone-card {
-        transform: scale(0.8);
-    }
-}
