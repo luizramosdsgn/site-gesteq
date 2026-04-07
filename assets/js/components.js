@@ -12,7 +12,7 @@ const headerHTML = `
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#">Soluções</a></li>
+                    <li><a href="#metodologia">Soluções</a></li>
                     <li><a href="#">Clientes</a></li>
                 </ul>
 
