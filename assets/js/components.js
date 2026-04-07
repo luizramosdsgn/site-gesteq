@@ -109,4 +109,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // =========================================
+    // Lógica - Linha do Tempo Animada (Timeline)
+    // =========================================
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    if (timelineItems.length > 0) {
+        // Fade in animation items
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visivel');
+                }
+            });
+        }, { threshold: 0.3 }); // disparar quando 30% vísivel
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    }
+
+    const timeline = document.querySelector('.timeline');
+    const timelineFill = document.querySelector('.timeline-preenchimento');
+    
+    if (timeline && timelineFill) {
+        window.addEventListener('scroll', () => {
+            const rect = timeline.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Distancia scrollada "dentro" do elemento:
+            // Começa quando o topo original da linha chega um pouco abaixo do meio da tela
+            let startFillingAt = windowHeight * 0.75; 
+            
+            let scrolled = startFillingAt - rect.top;
+            let percentage = scrolled / rect.height;
+
+            if (percentage < 0) percentage = 0;
+            if (percentage > 1) percentage = 1;
+
+            timelineFill.style.height = `${percentage * 100}%`;
+        });
+    }
 });
