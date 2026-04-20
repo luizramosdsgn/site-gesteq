@@ -62,15 +62,15 @@
     }
 
     .icone-proposito {
-        background-image: url(../icons/icone-proposito.svg);
+        background-image: url(../assets/icons/icone-proposito.svg);
     }
 
     .icone-filosofia {
-        background-image: url(../icons/icone-filosofia.svg);
+        background-image: url(../assets/icons/icone-filosofia.svg);
     }
 
     .icone-valores {
-        background-image: url(../icons/icone-valores.svg);
+        background-image: url(../assets/icons/icone-valores.svg);
     }
 
     .card-textos {
@@ -130,8 +130,7 @@
 
 
 /* Efeito Hover e Active (Automático) */
-.card-identidade.ativo,
-.card-identidade:hover {
+.card-identidade.ativo {
     transform: translateY(-15px);
     background-color: var(--cor-primaria);
     
@@ -155,28 +154,25 @@
     }
 
     .icone-proposito {
-        background-image: url(../icons/icone-proposito-branco.svg);
+        background-image: url(../assets/icons/icone-proposito-branco.svg);
     }
 
     .icone-filosofia {
-        background-image: url(../icons/icone-filosofia-branco.svg);
+        background-image: url(../assets/icons/icone-filosofia-branco.svg);
     }
 
     .icone-valores {
-        background-image: url(../icons/icone-valores-branco.svg);
+        background-image: url(../assets/icons/icone-valores-branco.svg);
     }
 
 }
 
-.card-identidade.ativo h3,
-.card-identidade:hover h3 {
+.card-identidade.ativo h3 {
     color: var(--cor-bg);
 }
 
 .card-identidade.ativo p,
-.card-identidade:hover p,
-.card-identidade.ativo ul,
-.card-identidade:hover ul {
+.card-identidade.ativo ul {
     color: rgba(255, 255, 255, 0.8);
 }
 

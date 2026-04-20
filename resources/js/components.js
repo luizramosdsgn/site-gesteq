@@ -5,14 +5,23 @@ const headerHTML = `
         <div class="container nav-container">
             
             <a href="#inicio" aria-label="Ir para inicio" class="logo-link">
-                <img src="assets/icons/logo-gesteq.svg" alt="Logo Gesteq">
+                <img src="resources/assets/icons/logo-gesteq.svg" alt="Logo Gesteq">
             </a>
 
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#metodologia">Soluções</a></li>
+                    <li class="dropdown-container">
+                        <a href="#metodologia" class="dropdown-toggle" id="btn-solucoes">Soluções <img src="resources/assets/icons/btn-menu.svg" alt="seta down"></a>
+                        <ul class="dropdown-menu" id="dropdown-solucoes">
+                            <li><a href="#">Gestão Estratégica com Foco nos Resultados</a></li>
+                            <li><span></span></li>
+                            <li><a href="#">Padronização dos Processos</a></li>
+                            <li><span></span></li>
+                            <li><a href="#">Desenvolvimento dos Líderes e Equipes</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Clientes</a></li>
                 </ul>
 
@@ -56,11 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Fechar ao clicar nos links ou no CTA
             navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
+                    if (link.id === 'btn-solucoes') return; // Ignora o clique caso seja no botão que abre o dropdown
                     navMenu.classList.remove('ativo');
                     btnMobile.classList.remove('ativo');
                 });
             });
+
+            // Lógica do Dropdown de Soluções
+            const btnSolucoes = document.getElementById('btn-solucoes');
+            const dropdownSolucoes = document.getElementById('dropdown-solucoes');
+
+            if (btnSolucoes && dropdownSolucoes) {
+                btnSolucoes.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    dropdownSolucoes.classList.toggle('ativo');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!btnSolucoes.contains(e.target) && !dropdownSolucoes.contains(e.target)) {
+                        dropdownSolucoes.classList.remove('ativo');
+                    }
+                });
+
+                // Fechar o popup ao clicar em uma opção
+                dropdownSolucoes.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        dropdownSolucoes.classList.remove('ativo');
+                    });
+                });
+            }
         }
     }
 
@@ -81,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             intervalId = setInterval(() => {
                 currentIndex = (currentIndex + 1) % cardsIdentidade.length;
                 activateCard(currentIndex);
-            }, 3000);
+            }, 5000);
         };
 
         const stopAutoPlay = () => {
@@ -90,24 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Inicia o autoplay
         startAutoPlay();
-
-        // Adiciona os eventos de hover
-        cardsIdentidade.forEach((card, index) => {
-            card.addEventListener('mouseenter', () => {
-                stopAutoPlay();
-                activateCard(index);
-                currentIndex = index;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                startAutoPlay();
-            });
-            
-            // Impede a navegação padrão ao clicar (já que o href é "#")
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-            });
-        });
     }
 
     // =========================================
