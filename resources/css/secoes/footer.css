@@ -42,8 +42,6 @@
 .footer-logo {
     height: 36px;
     width: auto;
-    /* Inverte o logo para ficar visível no fundo escuro */
-    filter: brightness(0) invert(1);
     opacity: 0.92;
     transition: opacity 0.25s ease;
 }
