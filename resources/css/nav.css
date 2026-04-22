@@ -116,6 +116,14 @@
     .dropdown-toggle {
         padding: 0;
     }
+    
+    .dropdown-toggle img {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-toggle.ativo img {
+        transform: rotate(180deg);
+    }
 }
 
 .dropdown-menu {

@@ -80,11 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnSolucoes.addEventListener('click', (e) => {
                     e.preventDefault();
                     dropdownSolucoes.classList.toggle('ativo');
+                    btnSolucoes.classList.toggle('ativo');
                 });
 
                 document.addEventListener('click', (e) => {
                     if (!btnSolucoes.contains(e.target) && !dropdownSolucoes.contains(e.target)) {
                         dropdownSolucoes.classList.remove('ativo');
+                        btnSolucoes.classList.remove('ativo');
                     }
                 });
 
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdownSolucoes.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         dropdownSolucoes.classList.remove('ativo');
+                        btnSolucoes.classList.remove('ativo');
                     });
                 });
             }
