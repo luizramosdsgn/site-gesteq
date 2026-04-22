@@ -4,9 +4,9 @@
 
 .metodologia {
     width: 100%;
-    padding: 8rem 0;
+    padding: 4rem 0;
     background-color: var(--cor-bg);
-    overflow: hidden; /* Evite a rolagem horizontal durante as animações. */
+    overflow-x: hidden; /* Evite a rolagem horizontal durante as animações. */
 }
 
 .metodologia-conteudo {
@@ -28,7 +28,7 @@
 /* Timeline Container */
 .timeline {
     position: relative;
-    max-width: 1200px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
@@ -136,7 +136,7 @@
     background: #ffffff;
     border: 1px solid rgba(1, 6, 71, 0.2);
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2rem;
     width: 100%; /* Espaço em branco para não tocar no meio */
     position: relative;
     z-index: 3;
@@ -160,7 +160,10 @@
     opacity: 0.8;
 }
 
-/* Botão outline (Catálogo de Treinamentos) */
+/*
+
+Botão outline (Catálogo de Treinamentos)
+
 .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -192,6 +195,8 @@
         transform: rotate(45deg);
     }
 }
+
+*/
 
 /* Responsividade Mobile */
 @media (max-width: 1024px) {

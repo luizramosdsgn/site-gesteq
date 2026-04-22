@@ -1,0 +1,200 @@
+/* =========================================
+   Footer
+   ========================================= */
+
+.footer {
+    width: 100%;
+    background: var(--cor-primaria);
+}
+
+/* ── Grid de 3 Colunas ── */
+.footer-conteudo {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.4fr;
+    gap: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    align-items: start;
+}
+
+/* ── Coluna genérica ── */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Subtítulo de coluna ── */
+.footer-titulo-col {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Coluna 1: Marca ── */
+.footer-logo-link {
+    display: inline-block;
+    width: fit-content;
+}
+
+.footer-logo {
+    height: 36px;
+    width: auto;
+    /* Inverte o logo para ficar visível no fundo escuro */
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+    transition: opacity 0.25s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-desc {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    max-width: 340px;
+}
+
+/* Ícones de redes sociais */
+.footer-redes {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.footer-rede-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.55);
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.footer-rede-link:hover {
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    background: rgba(245, 134, 52, 0.08);
+}
+
+/* ── Coluna 2: Navegação ── */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.footer-links li a {
+    font-size: 0.97rem;
+    color: rgba(255, 255, 255, 0.65);
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--cor-secundaria);
+    transition: width 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #fff;
+}
+
+.footer-links li a:hover::after {
+    width: 100%;
+}
+
+/* ── Coluna 3: Horários + Botão ── */
+.footer-horarios {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-horarios li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-horarios li:last-child {
+    border-bottom: none;
+}
+
+.horario-dia {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.horario-hora {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Botão outline de contato */
+.btn-footer-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    font-family: var(--fonte-principal);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    width: fit-content;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.btn-footer-contato:hover {
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    background: rgba(245, 134, 52, 0.06);
+}
+
+.btn-footer-contato svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-footer-contato:hover svg {
+    transform: translateX(4px);
+}
+
+/* ── Base: linha + copyright ── */
+.footer-base-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-bottom: 2rem;
+}
+
+.footer-linha {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+}

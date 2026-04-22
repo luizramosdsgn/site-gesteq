@@ -5,7 +5,7 @@
 .identidade {
     width: 100%;
     max-width: 1440px;
-    padding: 8rem 2rem;
+    padding: 8rem 2rem 4rem 2rem;
     background-color: var(--cor-bg);
 
     display: flex;
@@ -37,7 +37,6 @@
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 
     .linha-card {
         display: inline-block;
@@ -62,15 +61,15 @@
     }
 
     .icone-proposito {
-        background-image: url(../assets/icons/icone-proposito.svg);
+        background-image: url(../../assets/icons/icone-proposito.svg);
     }
 
     .icone-filosofia {
-        background-image: url(../assets/icons/icone-filosofia.svg);
+        background-image: url(../../assets/icons/icone-filosofia.svg);
     }
 
     .icone-valores {
-        background-image: url(../assets/icons/icone-valores.svg);
+        background-image: url(../../assets/icons/icone-valores.svg);
     }
 
     .card-textos {
@@ -154,15 +153,15 @@
     }
 
     .icone-proposito {
-        background-image: url(../assets/icons/icone-proposito-branco.svg);
+        background-image: url(../../assets/icons/icone-proposito-branco.svg);
     }
 
     .icone-filosofia {
-        background-image: url(../assets/icons/icone-filosofia-branco.svg);
+        background-image: url(../../assets/icons/icone-filosofia-branco.svg);
     }
 
     .icone-valores {
-        background-image: url(../assets/icons/icone-valores-branco.svg);
+        background-image: url(../../assets/icons/icone-valores-branco.svg);
     }
 
 }

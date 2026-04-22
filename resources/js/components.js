@@ -163,7 +163,90 @@ document.addEventListener('DOMContentLoaded', () => {
             if (percentage < 0) percentage = 0;
             if (percentage > 1) percentage = 1;
 
-            timelineFill.style.height = `${percentage * 100}%`;
+            timelineFill.style.height = `${percentage * 90}%`;
         });
     }
+
+    // =========================================
+    // Lógica - Seção de Números (Contadores)
+    // =========================================
+    const numerosItems = document.querySelectorAll('.numero-item');
+    if (numerosItems.length > 0) {
+
+        const animarContador = (el) => {
+            const target = parseInt(el.dataset.target, 10);
+            const prefix = el.dataset.prefix || '';
+            const duration = 1800; // ms
+            const startTime = performance.now();
+
+            const update = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease-out cúbico
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(eased * target);
+                el.textContent = prefix + current;
+                if (progress < 1) requestAnimationFrame(update);
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        let alreadyFired = false;
+
+        const numerosObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Fade-in do card
+                    entry.target.classList.add('visivel');
+
+                    // Animar contador apenas uma vez (quando a seção centraliza)
+                    if (!alreadyFired) {
+                        alreadyFired = true;
+                        numerosItems.forEach(item => {
+                            const valorEl = item.querySelector('.numero-valor');
+                            if (valorEl) animarContador(valorEl);
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.4 }); // dispara quando 40% do item está visível
+
+        numerosItems.forEach(item => numerosObserver.observe(item));
+    }
+
+    // =========================================
+    // Lógica - Seção de Clientes (Abas)
+    // =========================================
+    const abasBtns = document.querySelectorAll('.clientes-aba');
+    const paineisCarrossel = document.querySelectorAll('.clientes-painel');
+
+    if (abasBtns.length > 0) {
+        abasBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const alvo = btn.dataset.aba;
+
+                // Atualiza botões
+                abasBtns.forEach(b => {
+                    b.classList.remove('ativa');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('ativa');
+                btn.setAttribute('aria-selected', 'true');
+
+                // Atualiza painéis
+                paineisCarrossel.forEach(painel => {
+                    painel.classList.remove('ativo');
+                });
+                const painelAlvo = document.querySelector(`.clientes-painel[data-painel="${alvo}"]`);
+                if (painelAlvo) painelAlvo.classList.add('ativo');
+            });
+        });
+    }
+
+    // =========================================
+    // Footer — Ano dinâmico
+    // =========================================
+    const anoEl = document.getElementById('footer-ano');
+    if (anoEl) anoEl.textContent = new Date().getFullYear();
 });
