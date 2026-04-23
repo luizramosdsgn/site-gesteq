@@ -2,16 +2,31 @@
 
 /* =========================================
    Arquivo Central de Responsividade
+   Breakpoints: 1200px | 1024px | 768px
    ========================================= */
 
-/* ----------- AJUSTES GLOBAIS ----------- */
+
+/* =========================================
+   GLOBAIS
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .container {
         padding: 0 2rem;
     }
 
     h1 {
-        font-size: 3.2rem;
+        font-size: 2.75rem;
     }
 }
 
@@ -21,9 +36,9 @@
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
-    
+
     p {
         font-size: 1rem;
     }
@@ -34,37 +49,45 @@
    Seção: HERO
    ========================================= */
 
-/* ----------- TABLET (Até 1024px) ----------- */
+@media (max-width: 1200px) {
+    .hero-conteudo {
+        max-width: 680px;
+    }
+
+    .titulo {
+        font-size: 2.75rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero {
-        background-image: url(../img/hero-bg-mobile.webp);
+        background-image: url(../assets/img/hero-bg-mobile.webp);
         background-position: top center;
         height: fit-content;
-        padding-top: 800px; /* Mais espaço por causa do menu mobile */
+        min-height: 100dvh;
+        padding-top: 680px;
         padding-bottom: 60px;
     }
 
     .hero-conteudo {
         max-width: 100%;
-        align-items: center; 
+        align-items: center;
         text-align: center;
     }
 
     .hero-textos {
         align-items: center;
     }
+
+    .titulo {
+        font-size: 2.5rem;
+    }
 }
 
-/* ----------- MOBILE (Até 768px) ----------- */
 @media (max-width: 768px) {
     .hero {
-        width: 100%;
-        background-image: url(../img/hero-bg-mobile.webp);
-        background-position: top center;
-        height: fit-content;
-        min-height: 100dvh;
-        padding-top: 500px; /* Mais espaço por causa do menu mobile */
-        padding-bottom: 60px;
+        padding-top: 460px;
+        padding-bottom: 50px;
     }
 
     .hero-conteudo {
@@ -72,7 +95,7 @@
     }
 
     .hero .titulo {
-        font-size: 2.25rem;
+        font-size: 2rem;
         letter-spacing: -1px;
     }
 
@@ -87,52 +110,59 @@
    Seção: SOBRE NÓS
    ========================================= */
 
-/* ----------- TABLET (Até 1024px) ----------- */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .sobre {
-        background-image: url(../img/fundo-sobre-mobile.svg);
-        background-position: center center;
         height: auto;
         min-height: 100vh;
-        padding: 4rem 0;
-        margin-top: 0;
+        padding: 5rem 0;
+    }
 
-        .sobre-conteudo {
-        flex-direction: column;
-        gap: 3rem;
-        text-align: center;
-
-        .sobre-container {
-        width: 100%;
-        align-items: center;
-        }
-
-        }
-        
-        .sobre-conteudo img {
-        width: 60%;
-        }
-
-        .sobre-textos .subtitulo p {
-        text-indent: 0; /* Remove aquele recuo de parágrafo no modo centralizado */
-        }
+    .sobre .sobre-conteudo {
+        gap: 4rem;
     }
 }
 
-/* ----------- MOBILE (Até 768px) ----------- */
+@media (max-width: 1024px) {
+    .sobre {
+        background-image: url(../assets/img/fundo-sobre-mobile.svg);
+        background-position: center center;
+        height: auto;
+        min-height: auto;
+        padding: 4rem 0;
+        margin-top: 0;
+    }
+
+    .sobre .sobre-conteudo {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .sobre .sobre-conteudo img {
+        width: 60%;
+    }
+
+    .sobre .sobre-conteudo .sobre-container {
+        width: 100%;
+        align-items: center;
+    }
+
+    .sobre .sobre-textos .subtitulo p {
+        text-indent: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .sobre {
-        background-image: url(../img/fundo-sobre-mobile.svg);
-        background-position: center center;
         padding: 3rem 0;
     }
 
     .sobre .sobre-conteudo img {
-        width: 90%;
+        width: 85%;
     }
 
     .sobre .sobre-textos .titulo-sobre {
-        font-size: 2rem;
+        font-size: 1.875rem;
         letter-spacing: -1px;
     }
 }
@@ -142,7 +172,6 @@
    Seção: IDENTIDADE CORPORATIVA
    ========================================= */
 
-/* ----------- TABLET (Até 1024px) ----------- */
 @media (max-width: 1360px) {
     .identidade {
         padding: 6rem 2rem;
@@ -150,54 +179,386 @@
 
     .cards-identidade {
         flex-wrap: wrap;
-        align-items: center; /* Centraliza os cartões na tela */
+        align-items: center;
         gap: 3rem;
     }
 
     .card-identidade {
+        flex: 0 1 auto;
         width: 100%;
-        max-width: 500px; /* Limita a largura para não esticar de ponta a ponta e perder a proporção quadrada ideal */
-        height: auto;     /* Deixa a altura livre para expandir com o conteúdo */
-        min-height: 380px; 
+        max-width: 500px;
+        height: auto;
+        min-height: 380px;
     }
 
     .card-identidade .icone-card {
-        transform: scale(0.8);
-        transform-origin: left center; /* Para encolher sem afastar o ícone da margem esquerda */
+        transform: scale(0.85);
+        transform-origin: left center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-identidade {
+        gap: 2rem;
+    }
+
+    .card-identidade {
+        max-width: 460px;
+        min-height: 360px;
     }
 }
 
 @media (max-width: 1024px) {
     .cards-identidade {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .card-identidade {
+        max-width: 560px;
+        width: 100%;
     }
 }
 
-/* ----------- MOBILE (Até 768px) ----------- */
 @media (max-width: 768px) {
-
-    .cards-identidade {
-        flex-direction: column;
-    }
-
     .identidade {
         padding: 4rem 1.25rem;
     }
 
+    .cards-identidade {
+        gap: 1.5rem;
+    }
+
     .card-identidade {
         padding: 0 1.5rem 2rem 1.5rem;
+        min-height: auto;
     }
 
     .card-identidade h3 {
         font-size: 1.6rem;
     }
 
-    .card-identidade p, 
+    .card-identidade p,
     .card-identidade ul {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     .card-identidade .icone-card {
-        transform: scale(0.7);
+        transform: scale(0.75);
+        transform-origin: left center;
+    }
+}
+
+
+/* =========================================
+   Seção: ONDE ATUAMOS
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .atuacao-textos p {
+        width: 90%;
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .atuacao {
+        padding: 3rem 0;
+    }
+
+    .atuacao-textos p {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .atuacao-imagem {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .atuacao-textos .titulo {
+        font-size: 1.875rem;
+        letter-spacing: -0.5px;
+    }
+
+    .atuacao-imagem {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   Seção: METODOLOGIA (Timeline)
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .metodologia-conteudo {
+        gap: 4rem;
+        padding: 0 2rem;
+    }
+
+    .timeline-item.esquerda .timeline-numero {
+        right: -70px;
+    }
+
+    .timeline-item.direita .timeline-numero {
+        left: -70px;
+    }
+
+    .timeline-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .metodologia-conteudo {
+        padding: 0 1.25rem;
+    }
+
+    .timeline::after,
+    .timeline-preenchimento {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 0;
+        justify-content: flex-start;
+        left: 0 !important;
+    }
+
+    .timeline-item.esquerda .timeline-ponto,
+    .timeline-item.direita .timeline-ponto {
+        right: auto;
+        left: 14px;
+    }
+
+    .timeline-card {
+        width: 100%;
+    }
+
+    .timeline-numero {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .metodologia {
+        padding: 3rem 0;
+    }
+
+    .metodologia-textos .titulo {
+        font-size: 1.875rem;
+        letter-spacing: -0.5px;
+    }
+
+    .metodologia-conteudo {
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .timeline {
+        gap: 2.5rem;
+        padding: 1rem 0;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-card {
+        padding: 1.5rem;
+    }
+
+    .timeline-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .timeline-card p {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* =========================================
+   Seção: NÚMEROS (Estatísticas)
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .numeros {
+        width: 85%;
+    }
+
+    .numero-valor {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .numeros {
+        width: 90%;
+        padding: 3rem 1rem;
+        margin: 3rem 0;
+    }
+
+    .numeros-conteudo {
+        gap: 2rem;
+    }
+
+    .numeros-grid {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .numero-item {
+        transform: scale(0.75);
+    }
+
+    .numero-valor {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .numeros {
+        width: 100%;
+        padding: 2.5rem 1.25rem;
+        margin: 2rem 0;
+        background-size: cover;
+    }
+
+    .numeros-grid {
+        gap: 1.5rem;
+    }
+
+    .numero-item {
+        width: calc(50% - 0.75rem);
+    }
+
+    .numero-valor {
+        font-size: 2.25rem;
+        letter-spacing: -1px;
+    }
+
+    .numero-label {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================================
+   Seção: CLIENTES (Carrossel com Abas)
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .clientes {
+        padding: 5rem 0 4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .clientes {
+        padding: 4rem 0 3rem;
+    }
+
+    .clientes-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 20px;
+        gap: 0.375rem;
+    }
+
+    .clientes-conteudo {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .clientes {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .clientes-cabecalho .titulo {
+        font-size: 1.75rem;
+        letter-spacing: -0.5px;
+    }
+
+    .clientes-nav {
+        gap: 0.25rem;
+        padding: 0.3rem;
+    }
+
+    .clientes-aba {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .carrossel-item {
+        width: 140px;
+        height: 80px;
+    }
+}
+
+
+/* =========================================
+   Seção: FOOTER
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+    .footer-conteudo {
+        grid-template-columns: 1.4fr 0.7fr 1.2fr;
+        gap: 2rem;
+    }
+
+    .btn-footer-contato {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Coluna de marca ocupa a linha toda no topo */
+    .footer-marca {
+        grid-column: 1 / -1;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-conteudo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .footer-marca {
+        grid-column: auto;
+    }
+
+    .footer-horarios li {
+        gap: 1rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.78rem;
+        text-align: center;
+        line-height: 1.6;
     }
 }
