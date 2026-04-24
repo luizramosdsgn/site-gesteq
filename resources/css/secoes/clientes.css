@@ -4,6 +4,10 @@
 
 .clientes {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 6rem 0 5rem;
 }
 

@@ -5,6 +5,10 @@
 .metodologia {
     width: 100%;
     padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--cor-bg);
     overflow-x: hidden; /* Evite a rolagem horizontal durante as animações. */
 }
@@ -141,6 +145,11 @@
     position: relative;
     z-index: 3;
     transition: transform 0.3s ease;
+
+    img {
+        height: 6.25rem;
+        width: 6.25rem;
+    }
 }
 
 .timeline-card:hover {

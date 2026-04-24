@@ -128,7 +128,7 @@
         background-position: center center;
         height: auto;
         min-height: auto;
-        padding: 4rem 0;
+        padding: 4rem 2rem;
         margin-top: 0;
     }
 
@@ -136,6 +136,11 @@
         flex-direction: column;
         gap: 3rem;
         text-align: center;
+
+        img {
+            max-width: 420px;
+            
+        }
     }
 
     .sobre .sobre-conteudo img {
@@ -232,6 +237,10 @@
     .card-identidade {
         padding: 0 1.5rem 2rem 1.5rem;
         min-height: auto;
+
+        .linha-card {
+            margin-bottom: 1.25rem;
+        }
     }
 
     .card-identidade h3 {
@@ -347,12 +356,16 @@
 
 @media (max-width: 768px) {
     .metodologia {
-        padding: 3rem 0;
+        padding: 3rem 1.25rem 3rem 0;
     }
 
     .metodologia-textos .titulo {
-        font-size: 1.875rem;
-        letter-spacing: -0.5px;
+        padding-left: 1.25rem;
+
+        .titulo {
+            font-size: 1.875rem;
+            letter-spacing: -0.5px;
+        }
     }
 
     .metodologia-conteudo {
@@ -388,7 +401,7 @@
    Seção: NÚMEROS (Estatísticas)
    ========================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
     .numeros {
         width: 85%;
     }
@@ -423,6 +436,20 @@
     }
 }
 
+@media (max-width: 950px) {
+    .numeros {
+        width: 90vw;
+    }
+
+    .numeros-grid {
+        flex-wrap: nowrap;
+    }
+
+    .numero-item {
+        transform: scale(0.6);
+    }
+}
+
 @media (max-width: 768px) {
     .numeros {
         width: 100%;
@@ -446,6 +473,12 @@
 
     .numero-label {
         font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .numeros-grid {
+        flex-wrap: wrap;
     }
 }
 
@@ -543,7 +576,7 @@
 @media (max-width: 768px) {
     .footer-conteudo {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 4rem;
         padding-top: 3rem;
         padding-bottom: 2.5rem;
     }
