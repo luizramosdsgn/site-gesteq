@@ -105,6 +105,12 @@
     }
 }
 
+@media (max-width: 415px) {
+    .hero .btn {
+        font-size: 3.5vw;
+        white-space: nowrap;
+    }
+}
 
 /* =========================================
    Seção: SOBRE NÓS
