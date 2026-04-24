@@ -1,29 +1,152 @@
-<!doctype html>
-<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Gesteq | Soluções em Gestão</title>
 		<meta
 			name="description"
-			content="Gesteq - Transformando a gestão da sua empresa."
+			content="A Gesteq transforma a gestão da sua empresa com consultoria estratégica, padronização de processos e desenvolvimento de líderes. Atuamos em todo o Brasil. Agende uma conversa!"
 		/>
+		<link rel="canonical" href="https://www.gesteq.com.br/site/" />
 
+		<!-- Indexação -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="author" content="Gesteq" />
+		<meta name="theme-color" content="#0a0a0a" />
+
+		<!-- Geolocalização -->
+		<meta name="geo.region" content="BR-PE" />
+		<meta name="geo.placename" content="Recife, Pernambuco" />
+
+		<!-- =============================================
+		     OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
+		     ============================================= -->
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:site_name" content="Gesteq" />
+		<meta property="og:url" content="https://www.gesteq.com.br/site/" />
+		<meta property="og:title" content="Gesteq | Consultoria em Gestão Empresarial" />
+		<meta
+			property="og:description"
+			content="Transformamos o potencial da sua empresa em resultados reais e escaláveis. Consultoria estratégica, processos e desenvolvimento humano."
+		/>
+		<meta property="og:image" content="https://www.gesteq.com.br/site/resources/assets/img/og-image.webp" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Gesteq — Consultoria em Gestão Empresarial" />
+
+		<!-- =============================================
+		     TWITTER CARD
+		     ============================================= -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Gesteq | Consultoria em Gestão Empresarial" />
+		<meta
+			name="twitter:description"
+			content="Transformamos o potencial da sua empresa em resultados reais e escaláveis."
+		/>
+		<meta name="twitter:image" content="https://www.gesteq.com.br/site/resources/assets/img/og-image.webp" />
+
+		<!-- =============================================
+		     SCHEMA.ORG — JSON-LD (LocalBusiness)
+		     ============================================= -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Gesteq",
+			"description": "Consultoria especializada em gestão estratégica, padronização de processos e desenvolvimento de líderes e equipes.",
+			"url": "https://www.gesteq.com.br/site/",
+			"logo": "https://www.gesteq.com.br/site/resources/assets/icons/logo-gesteq.svg",
+			"image": "https://www.gesteq.com.br/site/resources/assets/img/og-image.webp",
+			"telephone": "+55-81-99767-4255",
+			"email": "contato@gesteq.com.br",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Recife",
+				"addressRegion": "PE",
+				"addressCountry": "BR"
+			},
+			"areaServed": {
+				"@type": "Country",
+				"name": "Brasil"
+			},
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+					"opens": "08:00",
+					"closes": "18:00"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Saturday",
+					"opens": "08:00",
+					"closes": "12:00"
+				}
+			],
+			"sameAs": [
+				"https://www.instagram.com/gesteq/"
+			],
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Soluções de Consultoria",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Gestão Estratégica com Foco nos Resultados"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Padronização dos Processos"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Desenvolvimento dos Líderes e Equipes"
+						}
+					}
+				]
+			}
+		}
+		</script>
+
+		<!-- =============================================
+		     FAVICON
+		     ============================================= -->
 		<link
 			rel="icon"
 			href="./resources/assets/icons/icone-vetor.svg"
 			type="image/svg+xml"
 		/>
+		<link rel="apple-touch-icon" href="./resources/assets/icons/icone-vetor.svg" />
 
-		<!-- Google Fonts: Poppins -->
+		<!-- =============================================
+		     PRELOAD — Recursos Críticos
+		     ============================================= -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
+			rel="preload"
+			as="style"
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-			rel="stylesheet"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 
-		<!-- Estilos -->
+		<!-- =============================================
+		     ESTILOS
+		     ============================================= -->
 		<link rel="stylesheet" href="resources/css/style.css" />
 		<link rel="stylesheet" href="resources/css/nav.css" />
 		<link rel="stylesheet" href="resources/css/transition.css" />
@@ -35,12 +158,12 @@
 		<link rel="stylesheet" href="resources/css/secoes/metodologia.css" />
 		<link rel="stylesheet" href="resources/css/secoes/numeros.css" />
 		<link rel="stylesheet" href="resources/css/secoes/clientes.css" />
-
 		<link rel="stylesheet" href="resources/css/secoes/footer.css" />
 		<link rel="stylesheet" href="resources/css/responsivo.css" />
 
-		<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+		<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 	</head>
+
 	<body>
 		<div id="header-container"></div>
 
@@ -62,7 +185,7 @@
 							gestão e excelência operacional.
 						</p>
 					</div>
-					<a href="https://wa.me/5581997674255" class="btn btn-primario"
+					<a target="_blank" href="https://wa.me/5581997674255" class="btn btn-primario"
 						>Agendar uma Conversa Estratégica
 						<img src="resources/assets/icons/flecha-cta.svg" alt="flecha cta"
 					/></a>
@@ -861,8 +984,8 @@
 							<span class="horario-hora">Fechado</span>
 						</li>
 					</ul>
-					<a href="https://wa.me/5581997674255" target="_blank" class="btn-footer-contato">Entre em Contato
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					<a href="https://wa.me/5581997674255" target="_blank" rel="noopener noreferrer" aria-label="Entre em contato via WhatsApp" class="btn-footer-contato">Entre em Contato
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 					</a>
 				</div>
 
@@ -871,14 +994,14 @@
 			<div class="footer-base">
 				<div class="container footer-base-inner">
 					<hr class="footer-linha">
-					<p class="footer-copyright">&copy; <span id="footer-ano"></span> Gesteq. Todos os direitos reservados. | Desenvolvido por <a style="color: rgba(255, 255, 255, 0.6);" href="https://www.instagram.com/audaciamarketingco/" target="_blank" rel="noopener" aria-label="Audácia Mkt&Co">Audácia Mkt&Co</a></p>
+					<p class="footer-copyright">&copy; <span id="footer-ano"></span> Gesteq. Todos os direitos reservados. | Desenvolvido por <a style="color: rgba(255, 255, 255, 0.6);" href="https://www.instagram.com/audaciamarketingco/" target="_blank" rel="noopener noreferrer" aria-label="Audácia Mkt&Co — Agência de Marketing">Audácia Mkt&Co</a></p>
 				</div>
 			</div>
 		</footer>
 
-		<script src="resources/js/components.js"></script>
-		<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script> 
-		<script src="resources/js/scroll.js"></script>
-		<script src="resources/js/transition.js"></script>
+		<script src="resources/js/components.js" defer></script>
+		<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+		<script src="resources/js/scroll.js" defer></script>
+		<script src="resources/js/transition.js" defer></script>
 	</body>
 </html>
