@@ -113,8 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let intervalId;
 
         const activateCard = (index) => {
+            const safeIndex = parseInt(index, 10);
+            if (isNaN(safeIndex) || safeIndex < 0 || safeIndex >= cardsIdentidade.length) {
+                return;
+            }
             cardsIdentidade.forEach(card => card.classList.remove('ativo'));
-            cardsIdentidade[index].classList.add('ativo');
+            const card = cardsIdentidade.item(safeIndex);
+            if (card) {
+                card.classList.add('ativo');
+            }
         };
 
         const startAutoPlay = () => {
