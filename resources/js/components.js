@@ -22,7 +22,10 @@ const headerHTML = `
                             <li><a href="#">Desenvolvimento dos Líderes e Equipes</a></li>
                         </ul>
                     </li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#fale-conosco"><strong>Fale Conosco</strong></a></li>
+
                 </ul>
 
                 <div class="nav-cta">

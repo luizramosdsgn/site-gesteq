@@ -19,9 +19,13 @@
 .hero-conteudo {
     display: flex;
     flex-direction: column;
-    max-width: 790px;
+    max-width: 740px;
     align-items: flex-start;
     gap: 1.275rem;
+}
+
+.hero .tag-padrao span {
+    align-self: start;
 }
 
 .hero-textos {

@@ -57,6 +57,10 @@
     .titulo {
         font-size: 2.75rem;
     }
+
+    .hero .tag-padrao span {
+        align-self: center !important;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -102,13 +106,15 @@
     .hero .btn {
         width: 100%;
         justify-content: center;
+        text-wrap: balance;
+        white-space: normal;
     }
 }
 
 @media (max-width: 415px) {
     .hero .btn {
-        font-size: 3.5vw;
-        white-space: nowrap;
+        font-size: 0.95rem;
+        white-space: normal;
     }
 }
 
