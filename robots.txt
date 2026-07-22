@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.gesteq.com.br/site/sitemap.xml
+Sitemap: https://www.gesteq.com.br/sitemap.xml
