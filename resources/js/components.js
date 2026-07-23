@@ -24,7 +24,7 @@ const headerHTML = `
                     </li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#fale-conosco"><strong>Fale Conosco</strong></a></li>
+                    <li><a href="https://wa.me/5581997674255"><strong>Fale Conosco</strong></a></li>
 
                 </ul>
 
