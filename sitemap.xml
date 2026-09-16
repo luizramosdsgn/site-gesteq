@@ -4,7 +4,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://www.gesteq.com.br/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,28 +12,28 @@
   <!-- Seções internas (âncoras) -->
   <url>
     <loc>https://www.gesteq.com.br/#sobre</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.gesteq.com.br/#metodologia</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.gesteq.com.br/#numeros</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.gesteq.com.br/#clientes</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
