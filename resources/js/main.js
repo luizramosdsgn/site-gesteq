@@ -5,6 +5,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
+    // Base Path — Detecta profundidade da página
+    // =========================================
+    const depth = (window.location.pathname.replace(/\/[^/]*$/, '').match(/\//g) || []).length;
+    const basePath = depth <= 1 ? '' : '../'.repeat(depth - 1);
+    const homeHref = basePath ? basePath + 'index.html' : '#inicio';
+    const isHome = !basePath;
+
+    // =========================================
     // Transição de Página (6 colunas)
     // =========================================
     if (!document.querySelector('.page-transition')) {
@@ -77,28 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('header-container');
 
     if (headerContainer) {
+        const inicioHref = isHome ? '#inicio' : homeHref;
+        const sobreHref = isHome ? '#sobre' : homeHref + '#sobre';
+        const metodoHref = isHome ? '#metodologia' : homeHref + '#metodologia';
+        const blogHref = isHome ? '#blog' : homeHref + '#blog';
+        const clientesHref = isHome ? '#clientes' : homeHref + '#clientes';
+
         headerContainer.innerHTML = `
         <header class="cabecalho">
             <div class="container nav-container">
-                <a href="#inicio" aria-label="Ir para inicio" class="logo-link">
-                    <img src="resources/assets/icons/logo-gesteq.svg" alt="Logo Gesteq">
+                <a href="${inicioHref}" aria-label="Ir para inicio" class="logo-link">
+                    <img src="${basePath}resources/assets/icons/logo-gesteq.svg" alt="Logo Gesteq">
                 </a>
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-links">
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="${inicioHref}">Início</a></li>
+                        <li><a href="${sobreHref}">Sobre Nós</a></li>
                         <li class="dropdown-container">
-                            <a href="#metodologia" class="dropdown-toggle" id="btn-solucoes">Soluções <img src="resources/assets/icons/btn-menu.svg" alt="seta down"></a>
+                            <a href="${metodoHref}" class="dropdown-toggle" id="btn-solucoes">Soluções <img src="${basePath}resources/assets/icons/btn-menu.svg" alt="seta down"></a>
                             <ul class="dropdown-menu" id="dropdown-solucoes">
-                                <li><a href="#">Gestão Estratégica com Foco nos Resultados</a></li>
+                                <li><a href="${basePath}solucoes/gestao-estrategica.html">Gestão Estratégica com Foco nos Resultados</a></li>
                                 <li><span></span></li>
                                 <li><a href="#">Padronização dos Processos</a></li>
                                 <li><span></span></li>
                                 <li><a href="#">Desenvolvimento dos Líderes e Equipes</a></li>
                             </ul>
                         </li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#clientes">Clientes</a></li>
+                        <li><a href="${blogHref}">Blog</a></li>
+                        <li><a href="${clientesHref}">Clientes</a></li>
                         <li><a href="https://wa.me/5581997674255"><strong>Fale Conosco</strong></a></li>
                     </ul>
                     <div class="nav-cta">
@@ -160,6 +174,187 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
+    }
+
+    // =========================================
+    // Footer — Injeção via JS
+    // =========================================
+    const footerContainer = document.getElementById('footer-container');
+
+    if (footerContainer) {
+        const inicioFooter = isHome ? '#inicio' : homeHref;
+        const sobreFooter = isHome ? '#sobre' : homeHref + '#sobre';
+        const blogFooter = isHome ? '#blog' : homeHref + '#blog';
+        const clientesFooter = isHome ? '#clientes' : homeHref + '#clientes';
+
+        footerContainer.innerHTML = `
+    <footer class="footer" id="footer">
+      <div class="container footer-conteudo">
+        <!-- Coluna 1: Logo + Descrição + Redes -->
+        <div class="footer-col footer-marca">
+          <a
+            href="${inicioFooter}"
+            class="footer-logo-link"
+            aria-label="Ir para o início"
+          >
+            <img
+              src="${basePath}resources/assets/icons/logo-gesteq-branco.svg"
+              alt="Logo Gesteq"
+              class="footer-logo"
+            />
+          </a>
+          <p class="footer-desc">
+            Transformamos o potencial das organizações em resultados reais
+            através de metodologia, gestão e desenvolvimento humano.
+          </p>
+          <div class="footer-redes">
+            <a
+              href="https://www.instagram.com/gesteq.consultoria/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram da Gesteq"
+              class="footer-rede-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/marcos-araujo-gesteq-47939047/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn da Gesteq"
+              class="footer-rede-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/gesteq/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook da Gesteq"
+              class="footer-rede-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col footer-nav">
+          <h4 class="footer-titulo-col">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="${inicioFooter}">Início</a></li>
+            <li><a href="${sobreFooter}">Sobre Nós</a></li>
+            <li><a href="${blogFooter}">Blog</a></li>
+            <li><a href="${clientesFooter}">Clientes</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Horário + Contato -->
+        <div class="footer-col footer-contato">
+          <h4 class="footer-titulo-col">Atendimento</h4>
+          <ul class="footer-horarios">
+            <li>
+              <span class="horario-dia">Segunda — Sexta</span>
+              <span class="horario-hora">08h às 18h</span>
+            </li>
+            <li>
+              <span class="horario-dia">Sábado</span>
+              <span class="horario-hora">08h às 12h</span>
+            </li>
+            <li>
+              <span class="horario-dia">Domingo</span>
+              <span class="horario-hora">Fechado</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/5581997674255"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Entre em contato via WhatsApp"
+            class="btn-footer-contato"
+            >Entre em Contato
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- /footer-conteudo -->
+
+      <div class="footer-base">
+        <div class="container footer-base-inner">
+          <hr class="footer-linha" />
+          <p class="footer-copyright">
+            &copy; <span id="footer-ano"></span> Gesteq. Todos os direitos
+            reservados. | Desenvolvido por
+            <a
+              style="color: rgba(255, 255, 255, 0.6)"
+              href="https://www.instagram.com/audaciamarketingco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Audácia Mkt&Co — Agência de Marketing"
+              >Audácia Mkt&Co</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>`;
     }
 
     // =========================================
@@ -283,5 +478,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     const anoEl = document.getElementById('footer-ano');
     if (anoEl) anoEl.textContent = new Date().getFullYear();
+
+    // =========================================
+    // Páginas Internas — Reveal de Seções
+    // =========================================
+    const revealItems = document.querySelectorAll('.servico-bloco, .servico-cta-conteudo');
+
+    if (revealItems.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visivel');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+    }
 
 });
