@@ -5,12 +5,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
-    // Base Path — Detecta profundidade da página
+    // Base Path — Detecta a raiz do projeto
+    // a partir do próprio src do script (resources/js/main.js)
     // =========================================
-    const depth = (window.location.pathname.replace(/\/[^/]*$/, '').match(/\//g) || []).length;
-    const basePath = depth <= 1 ? '' : '../'.repeat(depth - 1);
-    const homeHref = basePath ? basePath + 'index.html' : '#inicio';
-    const isHome = !basePath;
+    const currentScript = document.querySelector('script[src$="resources/js/main.js"]');
+    let basePath = '';
+    if (currentScript) {
+        const src = currentScript.getAttribute('src');
+        basePath = src.replace(/resources\/js\/main\.js$/, '');
+    }
+    const isHome = basePath === '' || basePath === './';
+    const homeHref = isHome ? '#inicio' : basePath + '../../';
 
     // =========================================
     // Transição de Página (6 colunas)
@@ -87,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerContainer) {
         const inicioHref = isHome ? '#inicio' : homeHref;
         const sobreHref = isHome ? '#sobre' : homeHref + '#sobre';
-        const metodoHref = isHome ? '#metodologia' : homeHref + '#metodologia';
         const blogHref = isHome ? '#blog' : homeHref + '#blog';
         const clientesHref = isHome ? '#clientes' : homeHref + '#clientes';
 
@@ -102,9 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <li><a href="${inicioHref}">Início</a></li>
                         <li><a href="${sobreHref}">Sobre Nós</a></li>
                         <li class="dropdown-container">
-                            <a href="${metodoHref}" class="dropdown-toggle" id="btn-solucoes">Soluções <img src="${basePath}resources/assets/icons/btn-menu.svg" alt="seta down"></a>
+                            <a href="#" class="dropdown-toggle" id="btn-solucoes">Soluções <img src="${basePath}resources/assets/icons/btn-menu.svg" alt="seta down"></a>
                             <ul class="dropdown-menu" id="dropdown-solucoes">
-                                <li><a href="${basePath}solucoes/gestao-estrategica.html">Gestão Estratégica com Foco nos Resultados</a></li>
+                                <li><a href="${basePath}solucoes/gestao-estrategica/">Gestão Estratégica com Foco nos Resultados</a></li>
                                 <li><span></span></li>
                                 <li><a href="#">Padronização dos Processos</a></li>
                                 <li><span></span></li>
